@@ -148,6 +148,9 @@ def create_authenticator(auth_object, temp_folder):
     elif auth_type == 'google_oauth':
         from auth.auth_google_oauth import GoogleOauthAuthenticator
         authenticator = GoogleOauthAuthenticator(auth_object)
+    elif auth_type == 'proxy_auth':
+        from auth.auth_proxy_auth import ProxyAuthenticator
+        authenticator = ProxyAuthenticator(auth_object)
     else:
         raise Exception(auth_type + ' auth is not supported')
 
